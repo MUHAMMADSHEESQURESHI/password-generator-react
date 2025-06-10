@@ -35,7 +35,7 @@ window.navigator.clipboard.writeText(password)
   return (
     <>
     <div className='w-full max-w-md mx-auto rounded-lg px-4 my-8 text-orange-500 bg-gray-700'>
-      <h1 className='text-white  text-xl '>Password Generator</h1>
+      <h1 className='text-white  text-xl '>Password Generator </h1>
       <br />
           <div className='flex shadow rounded-lg overflow-hidden mb-4'>
            <input 
@@ -61,15 +61,15 @@ window.navigator.clipboard.writeText(password)
             className='cursor-pointer'
             onChange={(e)=>{setLength(e.target.value)}}
             />
-            <label >length:{length}</label>
+            <label >Length:{length}</label>
           </div>
           <div className='flex items-center gap-x-1'>
          <input 
          type="checkbox"
          defaultChecked={numberallowed}
          id='numberInput'
-         onChange={()=>{
-          setNumberallowed((prev)=>{!prev})
+         onChange={(e)=>{
+          setNumberallowed(e.target.checked)
          }}
          />
          <label >Numbers</label>
@@ -79,8 +79,8 @@ window.navigator.clipboard.writeText(password)
          type="checkbox"
          defaultChecked={charallowed}
          id='charInput'
-         onChange={()=>{
-          setCharallowed((prev)=>{!prev})
+         onChange={(e)=>{
+          setCharallowed(e.target.checked)
          }}
          />
          <label >characters</label>
